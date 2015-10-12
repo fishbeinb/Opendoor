@@ -17,6 +17,7 @@ class ListingsHandler(BaseHandler):
         qo = ndb.QueryOptions(keys_only=True)
         min_max_params = {'price': 'price', 'bed': 'bedrooms', 'bath': 'bathrooms'}
         query_sets = []
+        #Should have just used redis :p
         for p in min_max_params:
             q = Listing.query()
             add_to_sets = False
